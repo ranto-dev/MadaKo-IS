@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaStar, FaPaperPlane, FaCheckCircle, FaSpinner } from "react-icons/fa";
 
@@ -7,20 +7,18 @@ const FeedbackForm = () => {
   const [hoverRating, setHoverRating] = useState(0);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("idle"); // idle | loading | success
+  const [status, setStatus] = useState("idle");
 
   const MAX_CHARS = 500;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (events: React.FormEvent<HTMLFormElement>) => {
+    events.preventDefault();
     if (!name || !rating || !message) return;
 
     setStatus("loading");
 
-    // Simulation d'envoi vers ton API ou Firebase
     setTimeout(() => {
       setStatus("success");
-      // Reset après 3 secondes pour réafficher le formulaire si nécessaire
       setTimeout(() => {
         setName("");
         setRating(0);
@@ -32,11 +30,9 @@ const FeedbackForm = () => {
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center bg-white px-6 py-24 overflow-hidden">
-      {/* Background géométrique (identique à la section About pour l'harmonie) */}
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-40 pointer-events-none" />
 
       <div className="relative w-full max-w-2xl mx-auto flex flex-col gap-10">
-        {/* En-tête du formulaire */}
         <div className="flex flex-col gap-3 text-center items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 border border-amber-200/60 rounded-full text-xs font-semibold text-amber-700 w-fit">
             💬 Votre avis compte
@@ -53,7 +49,6 @@ const FeedbackForm = () => {
           </p>
         </div>
 
-        {/* Conteneur principal avec animation de transition d'état */}
         <div className="bg-slate-50/50 border border-slate-100 rounded-3xl p-6 md:p-10 shadow-xl shadow-slate-100/40 relative min-h-[400px] flex items-center justify-center">
           <AnimatePresence mode="wait">
             {status !== "success" ? (
@@ -66,7 +61,6 @@ const FeedbackForm = () => {
                 onSubmit={handleSubmit}
                 className="w-full flex flex-col gap-6"
               >
-                {/* Étape 1 : La Note par étoiles */}
                 <div className="flex flex-col gap-2 items-center sm:items-start">
                   <label className="text-sm font-bold text-slate-800 tracking-wide">
                     Votre note globale *
@@ -93,7 +87,6 @@ const FeedbackForm = () => {
                   </div>
                 </div>
 
-                {/* Étape 2 : Nom ou Pseudo */}
                 <div className="flex flex-col gap-2">
                   <label
                     htmlFor="name"
@@ -113,7 +106,6 @@ const FeedbackForm = () => {
                   />
                 </div>
 
-                {/* Étape 3 : Message */}
                 <div className="flex flex-col gap-2">
                   <div className="flex justify-between items-center">
                     <label
@@ -141,7 +133,6 @@ const FeedbackForm = () => {
                   />
                 </div>
 
-                {/* Bouton de soumission */}
                 <button
                   type="submit"
                   disabled={
@@ -163,7 +154,6 @@ const FeedbackForm = () => {
                 </button>
               </motion.form>
             ) : (
-              /* Écran Succès après l'envoi */
               <motion.div
                 key="success-message"
                 initial={{ opacity: 0, scale: 0.9 }}

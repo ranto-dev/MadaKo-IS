@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaCircleQuestion } from "react-icons/fa6";
 
 const FAQ = () => {
-  // Liste des questions/réponses adaptées au projet MadaKo'IS ?
   const faqData = [
     {
       id: 1,
@@ -32,20 +31,17 @@ const FAQ = () => {
     },
   ];
 
-  // État pour suivre l'ID de la question actuellement ouverte (null si tout est fermé)
-  const [openId, setOpenId] = useState(null);
+  const [openId, setOpenId] = useState<number | null>(null);
 
-  const toggleFaq = (id) => {
+  const toggleFaq = (id: number | null) => {
     setOpenId(openId === id ? null : id);
   };
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center bg-white px-6 py-24 overflow-hidden">
-      {/* Background géométrique signature pour la cohérence visuelle */}
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-40 pointer-events-none" />
 
       <div className="relative w-full max-w-3xl mx-auto flex flex-col gap-12">
-        {/* En-tête de la section FAQ */}
         <div className="flex flex-col gap-3 text-center items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 border border-amber-200/60 rounded-full text-xs font-semibold text-amber-700 w-fit">
             <FaCircleQuestion className="text-amber-600" /> Vos questions
@@ -63,7 +59,6 @@ const FAQ = () => {
           </p>
         </div>
 
-        {/* Liste des accordéons */}
         <div className="flex flex-col gap-4 w-full">
           {faqData.map((item) => {
             const isOpen = openId === item.id;
@@ -77,7 +72,6 @@ const FAQ = () => {
                     : "bg-slate-50/50 border-slate-100 hover:border-slate-200 hover:bg-slate-50"
                 }`}
               >
-                {/* Bouton de la question (Déclencheur) */}
                 <button
                   onClick={() => toggleFaq(item.id)}
                   className="w-full flex items-center justify-between gap-4 p-5 md:p-6 text-left focus:outline-none group select-none"
@@ -92,7 +86,6 @@ const FAQ = () => {
                     {item.question}
                   </span>
 
-                  {/* Icône Chevron animée */}
                   <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
@@ -106,7 +99,6 @@ const FAQ = () => {
                   </motion.div>
                 </button>
 
-                {/* Contenu de la réponse masqué/affiché avec AnimatePresence */}
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div

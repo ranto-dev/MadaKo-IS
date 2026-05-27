@@ -1,5 +1,5 @@
 import { FaRegLightbulb, FaSplotch, FaGraduationCap } from "react-icons/fa6";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const About = () => {
   const appTarget = [
@@ -26,15 +26,14 @@ const About = () => {
     },
   ];
 
-  // Variantes pour animer les cartes les unes après les autres
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: {},
     visible: {
       transition: { staggerChildren: 0.15 },
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -45,11 +44,9 @@ const About = () => {
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center bg-white px-6 py-24 md:py-32 overflow-hidden">
-      {/* Background géométrique discret pour la texture */}
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-40 pointer-events-none" />
 
       <div className="relative w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start">
-        {/* COLONNE GAUCHE : Texte & Accroche (Fixe au scroll sur desktop) */}
         <div className="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-32">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -98,7 +95,6 @@ const About = () => {
           </motion.p>
         </div>
 
-        {/* COLONNE DROITE : Les Cartes de fonctionnalités */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -114,17 +110,14 @@ const About = () => {
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className="group relative flex flex-col sm:flex-row items-start gap-6 p-6 md:p-8 bg-slate-50/50 hover:bg-amber-50/30 border border-slate-100 hover:border-amber-200/60 rounded-2xl transition-all duration-300"
             >
-              {/* Badge Numéro Absolu (Top-Right) */}
               <span className="absolute top-6 right-8 text-xs font-mono font-bold text-slate-300 group-hover:text-amber-300 transition-colors">
                 {card.id}
               </span>
 
-              {/* Conteneur d'icône minimaliste */}
               <div className="flex-shrink-0 p-3 bg-white border border-slate-200/60 shadow-sm rounded-xl group-hover:border-amber-200 group-hover:shadow-md transition-all duration-300">
                 {card.icon}
               </div>
 
-              {/* Contenu textuel */}
               <div className="flex flex-col gap-1.5 pr-8">
                 <h3 className="text-xl font-bold text-slate-900 tracking-tight group-hover:text-amber-800 transition-colors">
                   {card.title}

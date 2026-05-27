@@ -1,12 +1,9 @@
 import { FaStar, FaRegCirclePlay, FaCircleQuestion } from "react-icons/fa6";
-import { motion } from "framer-motion";
-
-// Importation de ton image (à adapter selon ton arborescence exacte)
+import { motion, type Variants } from "framer-motion";
 import baobabBg from "../../assets/alle_de_baobab.png";
 
 const Hero = () => {
-  // Variantes pour un effet de cascade propre (Stagger)
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -14,7 +11,7 @@ const Hero = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -30,14 +27,12 @@ const Hero = () => {
         backgroundImage: `linear-gradient(to bottom, rgba(15, 23, 42, 0.85) 40%, rgba(15, 23, 42, 0.6) 100%), url(${baobabBg})`,
       }}
     >
-      {/* Conteneur principal animé en cascade */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-8"
       >
-        {/* Petit Badge du dessus */}
         <motion.div
           variants={itemVariants}
           className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-xs md:text-sm font-semibold tracking-wider text-amber-400 uppercase"
@@ -47,7 +42,6 @@ const Hero = () => {
           <FaStar className="animate-pulse" />
         </motion.div>
 
-        {/* Titre Principal */}
         <motion.div variants={itemVariants} className="flex flex-col gap-3">
           <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white leading-tight">
             Connaissez-vous <br />
@@ -66,12 +60,10 @@ const Hero = () => {
           </p>
         </motion.div>
 
-        {/* Boutons d'action (CTA) */}
         <motion.div
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mt-4"
         >
-          {/* Bouton Jouer */}
           <motion.a
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
@@ -82,7 +74,6 @@ const Hero = () => {
             <span>Démarrer une partie</span>
           </motion.a>
 
-          {/* Bouton Comment Jouer */}
           <motion.button
             whileHover={{
               scale: 1.05,
@@ -97,7 +88,7 @@ const Hero = () => {
           </motion.button>
         </motion.div>
       </motion.div>
-      {/* Ombre douce sombre et naturelle */}
+
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent pointer-events-none" />
     </header>
   );
