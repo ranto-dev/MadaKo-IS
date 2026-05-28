@@ -50,7 +50,6 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
     return () => clearInterval(timer);
   }, [questionTimeLeft, isAnswerSubmitted, quizFinished, currentQuestion]);
 
-  // Réinitialisation du chrono à chaque nouvelle question
   useEffect(() => {
     if (!quizFinished) {
       setQuestionTimeLeft(15);
@@ -93,7 +92,6 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
     setQuizFinished(false);
   };
 
-  // Écran Final (Quiz Terminé)
   if (quizFinished) {
     const isWin = score >= totalQuestions / 2;
     return (
@@ -172,10 +170,8 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
     );
   }
 
-  // Écran du Jeu en cours
   return (
     <div className="w-full max-w-xl mx-auto bg-white border border-slate-100 rounded-3xl shadow-2xl overflow-hidden select-none relative">
-      {/* Barre de progression supérieure */}
       <div className="w-full h-1.5 bg-slate-100 relative">
         <motion.div
           className="absolute left-0 top-0 h-full bg-gradient-to-r from-amber-400 to-amber-600"
@@ -186,7 +182,6 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
       </div>
 
       <div className="p-6 md:p-8 flex flex-col gap-6">
-        {/* En-tête : Numéro de question & Timer */}
         <div className="flex justify-between items-center border-b border-slate-100 pb-4">
           <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
             Question {currentQuestionIndex + 1} sur {totalQuestions}
@@ -211,21 +206,18 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
           </div>
         </div>
 
-        {/* La Question */}
         <div className="min-h-[70px] flex items-center justify-center">
           <h3 className="text-lg md:text-xl font-bold text-slate-900 text-center leading-snug">
             {currentQuestion.question}
           </h3>
         </div>
 
-        {/* Les Propositions de réponses */}
         <div className="flex flex-col gap-3 w-full">
           <AnimatePresence mode="wait">
             {currentQuestion.reponses_propose.map((answer, index) => {
               const isSelected = selectedAnswer === answer;
               const isCorrectAnswer = answer === currentQuestion.response;
 
-              // Styles dynamiques sophistiqués pour le feedback
               let btnStyle =
                 "bg-slate-50/50 border-slate-200 text-slate-800 hover:bg-slate-100 hover:border-slate-300";
 
@@ -263,7 +255,6 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
           </AnimatePresence>
         </div>
 
-        {/* Pied de Carte : Actions Soumettre / Suivante */}
         <div className="mt-2 border-t border-slate-100 pt-5">
           {!isAnswerSubmitted ? (
             <button

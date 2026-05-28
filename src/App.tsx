@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/home";
-import QuizzBody from "./pages/quiz";
+import Home from "./pages/landing";
+import QuizzBody from "./pages/quizgame";
 import { useState } from "react";
 import { FaSpinner } from "react-icons/fa6";
 

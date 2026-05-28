@@ -1,25 +1,9 @@
 import { FaStar, FaRegCirclePlay, FaCircleQuestion } from "react-icons/fa6";
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import baobabBg from "../../assets/alle_de_baobab.png";
+import { containerVariants, itemVariants } from "../../@types/variants";
 
 const Hero = () => {
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 70, damping: 15 },
-    },
-  };
-
   return (
     <header
       className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6 py-20 bg-cover bg-center bg-no-repeat bg-fixed select-none"
@@ -51,7 +35,6 @@ const Hero = () => {
           </h1>
         </motion.div>
 
-        {/* Description / Sous-titre */}
         <motion.div variants={itemVariants} className="max-w-2xl">
           <p className="text-base md:text-lg text-slate-200 font-medium leading-relaxed drop-shadow-sm">
             Évaluez vos connaissances et explorez la richesse de la Grande Île

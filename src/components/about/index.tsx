@@ -1,5 +1,6 @@
 import { FaRegLightbulb, FaSplotch, FaGraduationCap } from "react-icons/fa6";
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
+import { cardVariants, containerVariants } from "../../@types/variants";
 
 const About = () => {
   const appTarget = [
@@ -25,22 +26,6 @@ const About = () => {
         "Profitez d'une expérience interactive rythmée par des mécaniques de jeu captivantes et des effets immersifs.",
     },
   ];
-
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.15 },
-    },
-  };
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 80, damping: 15 },
-    },
-  };
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center bg-white px-6 py-24 md:py-32 overflow-hidden">
