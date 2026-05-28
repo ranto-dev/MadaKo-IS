@@ -35,12 +35,10 @@ const QuizGame: React.FC<QuizGameProps> = ({ quizzes }) => {
   const progressPercent =
     totalQuestions > 0 ? (currentQuestionIndex / totalQuestions) * 100 : 0;
 
-  // Gestion du chronomètre intelligent
   useEffect(() => {
     if (quizFinished || isAnswerSubmitted || !currentQuestion) return;
 
     if (questionTimeLeft === 0) {
-      // Force la soumission quand le temps est écoulé
       setIsAnswerSubmitted(true);
       return;
     }
