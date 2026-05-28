@@ -38,7 +38,7 @@ const Hero = () => {
           className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-xs md:text-sm font-semibold tracking-wider text-amber-400 uppercase"
         >
           <FaStar className="animate-pulse" />
-          <span>MadaKo'IS ? — Édition Culture</span>
+          <span>Gasikarako</span>
           <FaStar className="animate-pulse" />
         </motion.div>
 
@@ -84,7 +84,7 @@ const Hero = () => {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold text-sm tracking-wide rounded-full transition-all duration-200"
           >
             <FaCircleQuestion className="text-lg text-amber-400" />
-            <span>Comment jouer ?</span>
+            <span>FAQ</span>
           </motion.button>
         </motion.div>
       </motion.div>

@@ -55,7 +55,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 border border-amber-200/60 rounded-full text-xs font-semibold text-amber-700 w-fit"
           >
-            <span>🇲🇬</span> MadaKo'IS ? — Le Quiz
+            <span>🇲🇬</span> Gasikarako ? Le Quiz
           </motion.div>
 
           <motion.h2
@@ -108,7 +108,7 @@ const About = () => {
               variants={cardVariants}
               whileHover={{ x: 10 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="group relative flex flex-col sm:flex-row items-start gap-6 p-6 md:p-8 bg-slate-50/50 hover:bg-amber-50/30 border border-slate-100 hover:border-amber-200/60 rounded-2xl transition-all duration-300"
+              className="group relative flex flex-col sm:flex-row items-start gap-6 p-6 md:p-8 bg-slate-50/50 hover:bg-amber-50/30 border border-slate-100 hover:border-amber-200/60 rounded-2xl transition-all duration-50 ease-in-out"
             >
               <span className="absolute top-6 right-8 text-xs font-mono font-bold text-slate-300 group-hover:text-amber-300 transition-colors">
                 {card.id}

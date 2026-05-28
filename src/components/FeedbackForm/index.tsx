@@ -165,7 +165,7 @@ const FeedbackForm = () => {
                   <FaCheckCircle className="text-4xl text-emerald-500" />
                 </div>
                 <h3 className="text-2xl font-black text-slate-900 tracking-tight">
-                  Misaotra bets ! ✨
+                  Misaotra betsaka ! ✨
                 </h3>
                 <p className="text-sm md:text-base text-slate-500 max-w-xs leading-relaxed">
                   Votre précieux avis a bien été enregistré. Merci de nous aider

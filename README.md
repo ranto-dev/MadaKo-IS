@@ -1,10 +1,11 @@
+![screenshot](./gasikarako.png)
+
 # 🇲🇬 MadaKo'IS ? – Quizz Éducatif & Ludique
 
 > 🎮 **Testez vos connaissances sur Madagascar à travers un quizz fun, visuel et immersif !**
 
 MadaKo'IS ? est une application web interactive conçue pour offrir une **expérience utilisateur exceptionnelle**. Mêlant éducation, humour et gameplay dynamique, le projet arbore un design moderne, fluide et entièrement réactif.
 
----
 
 ## 🎯 Objectifs du projet
 
@@ -100,7 +101,6 @@ Les questions du quizz sont structurées et modifiables via le fichier `question
 | `npm run preview` | Permet de tester localement le build de production             |
 | `npm run lint`    | Analyse le code pour détecter et corriger les erreurs de style |
 
-## 📸 Aperçu de l'application
 
 ## 🤝 Contribuer
 
