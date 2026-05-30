@@ -6,6 +6,7 @@ const FeedbackForm = () => {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("idle");
 
@@ -102,6 +103,25 @@ const FeedbackForm = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Ex: Rova, Toky, Sarah..."
+                    className="w-full px-4 py-3.5 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/10 transition-all text-sm font-medium"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label
+                    htmlFor="name"
+                    className="text-sm font-bold text-slate-800 tracking-wide"
+                  >
+                    Votre addresse Email *
+                  </label>
+                  <input
+                    type="text"
+                    id="email"
+                    required
+                    disabled={status === "loading"}
+                    value={name}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Ex: je.connais@madagascar.mg"
                     className="w-full px-4 py-3.5 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/10 transition-all text-sm font-medium"
                   />
                 </div>
