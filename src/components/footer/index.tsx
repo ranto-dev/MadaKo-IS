@@ -39,7 +39,7 @@ const Footer = () => {
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400">
               Navigation
             </h4>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+            <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-2">
               {footerLinks.map((link, index) => (
                 <li key={index}>
                   <a

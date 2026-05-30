@@ -6,6 +6,7 @@ import { containerVariants, itemVariants } from "../../@types/variants";
 const Hero = () => {
   return (
     <header
+      id="accueil"
       className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-6 py-20 bg-cover bg-center bg-no-repeat bg-fixed select-none"
       style={{
         backgroundImage: `linear-gradient(to bottom, rgba(15, 23, 42, 0.85) 40%, rgba(15, 23, 42, 0.6) 100%), url(${baobabBg})`,
@@ -57,7 +58,8 @@ const Hero = () => {
             <span>Démarrer une partie</span>
           </motion.a>
 
-          <motion.button
+          <motion.a
+            href="#faq"
             whileHover={{
               scale: 1.05,
               y: -2,
@@ -68,7 +70,7 @@ const Hero = () => {
           >
             <FaCircleQuestion className="text-lg text-amber-400" />
             <span>FAQ</span>
-          </motion.button>
+          </motion.a>
         </motion.div>
       </motion.div>
 
