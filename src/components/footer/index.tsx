@@ -23,9 +23,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
           <div className="md:col-span-5 flex flex-col gap-4">
             <div className="flex items-center gap-2.5">
-              <span className="text-2xl">🇲🇬</span>
               <span className="text-xl font-black text-slate-900 tracking-tight">
-                MadaKo'IS <span className="text-amber-600">?</span>
+                Gasikarako <span className="text-amber-600">?</span>
               </span>
             </div>
             <p className="text-sm text-slate-500 leading-relaxed max-w-sm">

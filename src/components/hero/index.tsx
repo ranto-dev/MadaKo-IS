@@ -20,11 +20,9 @@ const Hero = () => {
       >
         <motion.div
           variants={itemVariants}
-          className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-xs md:text-sm font-semibold tracking-wider text-amber-400 uppercase"
+          className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-xs md:text-sm font-semibold tracking-wider text-amber-400"
         >
-          <FaStar className="animate-pulse" />
-          <span>Gasikarako</span>
-          <FaStar className="animate-pulse" />
+          <span>Gasikarako 🇲🇬 </span>
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex flex-col gap-3">
@@ -38,9 +36,9 @@ const Hero = () => {
 
         <motion.div variants={itemVariants} className="max-w-2xl">
           <p className="text-base md:text-lg text-slate-200 font-medium leading-relaxed drop-shadow-sm">
-            Évaluez vos connaissances et explorez la richesse de la Grande Île
-            🇲🇬 à travers un quiz fun, instructif et immersif. Relevez le défi
-            dès maintenant !
+            Évaluez vos connaissances et explorez la richesse de la Grande Île à
+            travers un quiz fun, instructif et immersif. Relevez le défi dès
+            maintenant !
           </p>
         </motion.div>
 
